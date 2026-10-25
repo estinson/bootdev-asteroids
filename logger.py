@@ -99,21 +99,21 @@ def log_state() -> None:
             sprite_info = {"type": value.__class__.__name__}
 
             sprite_info["pos"] = [
-                round(sprite.position.x, 2),
-                round(sprite.position.y, 2),
+                round(value.position.x, 2),
+                round(value.position.y, 2),
             ]
 
-            if hasattr(sprite, "velocity"):
+            if hasattr(value, "velocity"):
                 sprite_info["vel"] = [
-                    round(sprite.velocity.x, 2),
-                    round(sprite.velocity.y, 2),
+                    round(value.velocity.x, 2),
+                    round(value.velocity.y, 2),
                 ]
 
-            if hasattr(sprite, "radius"):
-                sprite_info["rad"] = sprite.radius
+            if hasattr(value, "radius"):
+                sprite_info["rad"] = value.radius
 
-            if hasattr(sprite, "rotation"):
-                sprite_info["rot"] = round(sprite.rotation, 2)
+            if hasattr(value, "rotation"):
+                sprite_info["rot"] = round(value.rotation, 2)
 
             game_state[key] = sprite_info
 
